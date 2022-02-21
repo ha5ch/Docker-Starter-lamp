@@ -4,6 +4,34 @@ A test-environment for Wordpress or other PHP/LAMP based websites/services.
 
 You need [Docker](https://www.docker.com/) and [Docker-Compose](https://docs.docker.com/compose/) to get it up and running.
 
+## Useful commands
+**start services**
+```
+docker-compose up -d
+```
+
+**stop services**
+```
+docker-compose down
+```
+
+**restart (single) service**
+```
+docker-compose restart webserver
+```
+
+**rebuild container**
+```
+docker-compose build webserver
+```
+
+**check container**
+```
+docker-compose logs -f
+docker-compose exec webserver php -m
+docker-compose exec webserver php -i
+```
+
 ## Configuration
 Adapt the [docker-compose.yml](./docker-compose.yml) to your needs.
 
@@ -94,7 +122,7 @@ To create a Wordpress test environment, copy the whole content of your wordpress
 Simple, copy/adapt all needed files in [php](./php) to your needs.
 
 
-### Known problems
+## Known problems
 When you do some changes (e.g. adopt [Dockerfile](php/Dockerfile)) and run something like `docker-compose build ...` etc. you may get an error, because of permission error
 
 ![permission error](doc/permission_error.png)
