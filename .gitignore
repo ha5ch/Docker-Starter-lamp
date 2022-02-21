@@ -1,0 +1,4 @@
+*.sql
+www/*
+!www/info.php
+db/
