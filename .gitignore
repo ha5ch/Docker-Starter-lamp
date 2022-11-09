@@ -2,3 +2,4 @@
 www/*
 !www/info.php
 db/
+bkp/
